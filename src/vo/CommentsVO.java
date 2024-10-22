@@ -8,14 +8,26 @@ public class CommentsVO {
     private String content;
     private Date cDate;
 
+    // 날짜는 SYSDATE 를 사용할 것이기 때문에
+    // SELECT 용은 cDate를 받지 않음
     public CommentsVO(int postNo, String nName, String content) {
         this.postNo = postNo;
         this.nName = nName;
         this.content = content;
     }
 
+    // 출력은 날짜도 해줘야 하기 때문에 생성자에 cDate 추가함
+    public CommentsVO(int postNo, String nName, String content, Date cDate) {
+        this.postNo = postNo;
+        this.nName = nName;
+        this.content = content;
+        this.cDate = cDate;
+    }
+    // 빈 생성자
     public CommentsVO() {}
 
+
+    // Getter 와 Setter
     public int getPostNo() {
         return postNo;
     }
