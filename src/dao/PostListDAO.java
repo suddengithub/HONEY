@@ -46,8 +46,23 @@ public class PostListDAO {
         }
         return list;
     }
-    public String nicknameSearch(String nName) {
-        return "SELECT * From VM_POSTS_PAGE WHERE NNAME LIKE '%"+nName+"%';";
+    public String authorSearch(String author) {
+        return "SELECT * From VM_POSTS_PAGE WHERE NNAME LIKE '%" + author + "%';";
     }
+    public String myPostsSearch(String nName) {
+        return "SELECT * From VM_POSTS_PAGE WHERE NNAME = '" + nName + "';";
+    }
+    public String titleSearch(String title) {
+        return "SELECT * From VM_POSTS_PAGE WHERE TITLE LIKE '%" + title + "%';";
+    }
+    public String categorySearch(String category) {
+        return "SELECT * From VM_POSTS_PAGE WHERE CATE = '" + category + "';";
+    }
+    public String LikeSearch(String nName) {
+        return "SELECT * From VM_POSTS_PAGE WHERE POSTNO IN " +
+                "(SELECT POSTNO FROM LIKES " +
+                "WHERE NNAME = '" + nName + "';";
+    }
+    public final static String allSearch = "SELECT * From VM_POSTS_PAGE";
 
 }
