@@ -1,5 +1,6 @@
 package vo;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 public class CommentsVO {
@@ -7,6 +8,9 @@ public class CommentsVO {
     private String nName;
     private String content;
     private Date cDate;
+    private BigDecimal commNo;
+    // 댓글 보이는 순서를 위해 추가한 값
+    // 날짜순으로 하지 않는 이유는 대댓글 기능을 위해서
 
     // 날짜는 SYSDATE 를 사용할 것이기 때문에
     // SELECT 용은 cDate를 받지 않음
